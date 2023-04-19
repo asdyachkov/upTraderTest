@@ -1,0 +1,22 @@
+<div class="block">
+{% for category_ in menu_categories %}
+<div class="category-wrap">
+  {% if category_.category_id == menu_category_select_id and category_.theme == menu_category_select %}
+  <h3><a href="{% url 'menu_empty' %}">{{ category_.category }}</a></h3>
+  {% else %}
+  <h3><a href="{% url 'menu' category_.category %}">{{ category_.category }}</a></h3>
+  {% endif %}
+  {% if category_.category_id <= menu_category_select_id and category_.theme == menu_category_select %}
+    {% if category_.subcategories %}
+    <ul>
+      {% for subcategory in category_.subcategories %}
+        <li><a href="">{{ subcategory }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  {% endif %}
+</div>
+{% endfor %}
+</div>
+
+

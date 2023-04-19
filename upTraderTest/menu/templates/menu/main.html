@@ -1,0 +1,9 @@
+{% extends 'menu/index.html' %}
+{% load draw_menu %}
+
+{% block content %}
+<div class="container">
+    {% draw_menu '1' menu_category_select_id menu_category_select %}
+    {% draw_menu '2' menu_category_select_id menu_category_select %}
+</div>
+{% endblock %}
